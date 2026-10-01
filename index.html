@@ -499,6 +499,18 @@
     </svg>
   </a>
 
-  <script>document.querySelectorAll('#nav-mobile a').forEach(a=>a.onclick=()=>document.getElementById('nav-mobile').open=false)</script>
+  <script>
+    // Tutup menu mobile SETELAH browser selesai menggulir ke section.
+    // Menutupnya langsung (sinkron di dalam event click) menyembunyikan tautannya
+    // sebelum browser sempat menjalankan navigasi anchor, sehingga klik menu
+    // tidak membawa ke mana-mana. Menunda satu tick menyelesaikannya.
+    document.querySelectorAll('#nav-mobile a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        setTimeout(function () {
+          document.getElementById('nav-mobile').open = false
+        }, 0)
+      })
+    })
+  </script>
 </body>
 </html>
