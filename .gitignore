@@ -1,0 +1,14 @@
+# Berkas kerja — TIDAK ikut diunggah (keputusan T16: hanya situsnya yang publik).
+# Spec, daftar task, catatan progres, dan berkas skill tetap ada di komputermu,
+# tapi tidak masuk repo. Kalau nanti berubah pikiran, hapus dua baris ini.
+docs/
+.agents/
+
+# Sampah sistem operasi
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+.idea/

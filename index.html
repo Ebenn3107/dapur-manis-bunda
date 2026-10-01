@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dapur Manis Bunda — Kue Rumahan Homemade</title>
+  <meta name="description" content="Kue ulang tahun, brownies, kue kering, dan snack box homemade tanpa pengawet. Bisa custom, siap antar. Pesan langsung lewat WhatsApp.">
+  <meta name="theme-color" content="#FFF8F0">
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+  <!-- Open Graph (untuk pratinjau saat link dibagikan di WhatsApp/media sosial) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:site_name" content="Dapur Manis Bunda">
+  <meta property="og:title" content="Dapur Manis Bunda — Kue Rumahan Homemade">
+  <meta property="og:description" content="Kue ulang tahun, brownies, kue kering, dan snack box homemade tanpa pengawet. Bisa custom, siap antar. Pesan langsung lewat WhatsApp.">
+  <!-- TODO T16: setelah tahu alamat deploy, isi og:image dengan URL ABSOLUT dan
+       tambahkan og:url + <link rel="canonical">. Contoh:
+       https://namamu.github.io/dapur-manis-bunda/assets/img/og.png
+       og:image TIDAK berfungsi kalau masih relatif, jadi jangan lupa. -->
+  <meta property="og:image" content="assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dapur Manis Bunda — kue rumahan homemade">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dapur Manis Bunda — Kue Rumahan Homemade">
+  <meta name="twitter:description" content="Kue ulang tahun, brownies, kue kering, dan snack box homemade tanpa pengawet. Bisa custom, siap antar.">
+  <meta name="twitter:image" content="assets/img/og.png">
+
+  <!-- Font disajikan dari server sendiri (assets/fonts/), bukan Google Fonts:
+       menghapus dua koneksi ke domain luar yang memblokir render.
+       Dua yang di-preload adalah yang paling menentukan tampilan awal:
+       Fraunces 600 untuk H1, Plus Jakarta Sans 400 untuk badan teks. -->
+  <link rel="preload" href="assets/fonts/fraunces-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-cream font-body text-mocha">
+
+  <!-- ============ Navbar ============ -->
+  <header class="bg-cream border-b border-sand">
+    <nav class="max-w-6xl mx-auto px-5 md:px-8 flex items-center justify-between h-16 lg:h-20">
+
+      <a href="#" class="font-display text-xl lg:text-2xl font-semibold text-cocoa">Dapur Manis Bunda</a>
+
+      <ul class="hidden lg:flex items-center gap-8 font-body text-sm font-medium">
+        <li><a href="#keunggulan" class="text-mocha hover:text-berry-dark transition">Keunggulan</a></li>
+        <li><a href="#menu" class="text-mocha hover:text-berry-dark transition">Menu</a></li>
+        <li><a href="#cara-pesan" class="text-mocha hover:text-berry-dark transition">Cara Pesan</a></li>
+        <li><a href="#testimoni" class="text-mocha hover:text-berry-dark transition">Testimoni</a></li>
+        <li><a href="#lokasi" class="text-mocha hover:text-berry-dark transition">Lokasi</a></li>
+      </ul>
+
+      <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20kue"
+         target="_blank" rel="noopener"
+         class="hidden lg:inline-flex items-center gap-2 bg-berry-dark hover:bg-cocoa text-white font-semibold px-6 py-3 rounded-full transition">
+        Pesan Sekarang
+      </a>
+
+      <details id="nav-mobile" class="lg:hidden relative">
+        <summary aria-label="Buka menu"
+                 class="list-none [&::-webkit-details-marker]:hidden cursor-pointer p-2 -mr-2 text-berry">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" x2="20" y1="6" y2="6"/>
+            <line x1="4" x2="20" y1="12" y2="12"/>
+            <line x1="4" x2="20" y1="18" y2="18"/>
+          </svg>
+        </summary>
+
+        <div class="absolute right-0 top-full z-40 mt-3 w-56 bg-white rounded-2xl p-4 shadow-sm">
+          <ul class="flex flex-col font-body text-sm font-medium">
+            <li><a href="#keunggulan" class="block py-2 text-mocha hover:text-berry-dark transition">Keunggulan</a></li>
+            <li><a href="#menu" class="block py-2 text-mocha hover:text-berry-dark transition">Menu</a></li>
+            <li><a href="#cara-pesan" class="block py-2 text-mocha hover:text-berry-dark transition">Cara Pesan</a></li>
+            <li><a href="#testimoni" class="block py-2 text-mocha hover:text-berry-dark transition">Testimoni</a></li>
+            <li><a href="#lokasi" class="block py-2 text-mocha hover:text-berry-dark transition">Lokasi</a></li>
+          </ul>
+          <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20kue"
+             target="_blank" rel="noopener"
+             class="mt-3 inline-flex w-full justify-center items-center gap-2 bg-berry-dark hover:bg-cocoa text-white font-semibold px-6 py-3 rounded-full transition">
+            Pesan Sekarang
+          </a>
+        </div>
+      </details>
+
+    </nav>
+  </header>
+
+  <!-- ============ Hero ============ -->
+  <section id="hero" class="py-16 md:py-24 bg-cream">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <div class="grid lg:grid-cols-5 gap-10 lg:gap-16 items-center">
+
+        <div class="max-w-2xl lg:col-span-3">
+          <h1 class="font-display text-4xl md:text-6xl font-semibold text-cocoa leading-tight">
+            Kue Rumahan Homemade untuk Momen Spesialmu
+          </h1>
+          <p class="mt-6 font-body text-base md:text-lg text-mocha leading-relaxed">
+            Dibuat fresh setiap pesanan, tanpa pengawet, dan bisa custom rasa maupun desainnya.
+            Pesan lewat WhatsApp, tinggal diambil atau kami antar ke rumah.
+          </p>
+          <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20kue"
+             target="_blank" rel="noopener"
+             class="mt-8 inline-flex items-center gap-2 bg-berry-dark hover:bg-cocoa text-white font-semibold px-6 py-3 rounded-full transition">
+            Pesan Sekarang
+          </a>
+        </div>
+
+        <img src="assets/img/hero.webp"
+             alt="Potongan kue coklat berlapis buatan Dapur Manis Bunda"
+             width="1000" height="750"
+             class="lg:col-span-2 rounded-xl aspect-[4/3] object-cover w-full">
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Keunggulan ============ -->
+  <section id="keunggulan" class="py-16 md:py-24 bg-sand">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-cocoa mb-8 md:mb-10">
+        Kenapa Pilih Dapur Manis Bunda
+      </h2>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-berry">
+            <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/>
+            <path d="M6 17h12"/>
+          </svg>
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Homemade</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">
+            Dibuat sendiri di dapur rumahan, satu per satu. Bukan produksi pabrik.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-berry">
+            <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/>
+            <circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/>
+            <circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/>
+            <circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/>
+            <circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/>
+          </svg>
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Bisa Custom</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">
+            Rasa, ukuran, dan desain bisa disesuaikan dengan permintaanmu.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-berry">
+            <path d="M12 6v6l4 2"/>
+            <circle cx="12" cy="12" r="10"/>
+          </svg>
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Tepat Waktu</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">
+            Selesai sesuai jadwal yang disepakati, aman untuk acara bertanggal pasti.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-berry">
+            <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/>
+            <path d="M15 18H9"/>
+            <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/>
+            <circle cx="17" cy="18" r="2"/>
+            <circle cx="7" cy="18" r="2"/>
+          </svg>
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Bisa Antar</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">
+            Kami antar ke rumah atau kantor. Tidak perlu repot mengambil sendiri.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Menu ============ -->
+  <section id="menu" class="py-16 md:py-24 bg-cream">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-cocoa mb-8 md:mb-10">Menu Kami</h2>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm flex flex-col">
+          <img src="assets/img/kue-ulang-tahun.webp"
+               alt="Kue ulang tahun putih berhias meringue dan lilin"
+               width="800" height="600" loading="lazy"
+               class="rounded-xl aspect-[4/3] object-cover w-full">
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Kue Ulang Tahun</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">Bisa custom tulisan, tema, dan tingkat kemanisan.</p>
+          <div class="mt-auto pt-4">
+          <span class="inline-block bg-butter text-cocoa text-xs font-semibold px-3 py-1 rounded-full">Mulai Rp 150.000</span>
+          <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20Kue%20Ulang%20Tahun"
+             target="_blank" rel="noopener"
+             class="mt-3 flex w-fit items-center gap-2 border border-cocoa text-cocoa text-sm font-semibold px-4 py-2.5 rounded-full hover:bg-cocoa hover:text-cream transition">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            Pesan via WA
+          </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm flex flex-col">
+          <img src="assets/img/brownies.webp"
+               alt="Brownies fudgy dengan lapisan keju dan blueberry"
+               width="800" height="600" loading="lazy"
+               class="rounded-xl aspect-[4/3] object-cover w-full">
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Brownies</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">Fudgy dengan lapisan keju lembut dan blueberry.</p>
+          <div class="mt-auto pt-4">
+          <span class="inline-block bg-butter text-cocoa text-xs font-semibold px-3 py-1 rounded-full">Mulai Rp 45.000</span>
+          <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20Brownies"
+             target="_blank" rel="noopener"
+             class="mt-3 flex w-fit items-center gap-2 border border-cocoa text-cocoa text-sm font-semibold px-4 py-2.5 rounded-full hover:bg-cocoa hover:text-cream transition">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            Pesan via WA
+          </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm flex flex-col">
+          <img src="assets/img/kue-kering.webp"
+               alt="Kue kering coklat bertuliskan Home Made"
+               width="800" height="600" loading="lazy"
+               class="rounded-xl aspect-[4/3] object-cover w-full">
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Kue Kering</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">Nastar, kastengel, dan putri salju. Isi 500 gram.</p>
+          <div class="mt-auto pt-4">
+          <span class="inline-block bg-butter text-cocoa text-xs font-semibold px-3 py-1 rounded-full">Mulai Rp 60.000 / toples</span>
+          <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20Kue%20Kering"
+             target="_blank" rel="noopener"
+             class="mt-3 flex w-fit items-center gap-2 border border-cocoa text-cocoa text-sm font-semibold px-4 py-2.5 rounded-full hover:bg-cocoa hover:text-cream transition">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            Pesan via WA
+          </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm flex flex-col">
+          <img src="assets/img/tart-buah.webp"
+               alt="Tart buah mini dengan stroberi dan blueberry"
+               width="800" height="600" loading="lazy"
+               class="rounded-xl aspect-[4/3] object-cover w-full">
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Tart Buah</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">Tart mini dengan stroberi dan blueberry segar.</p>
+          <div class="mt-auto pt-4">
+          <span class="inline-block bg-butter text-cocoa text-xs font-semibold px-3 py-1 rounded-full">Mulai Rp 45.000 / box</span>
+          <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20Tart%20Buah"
+             target="_blank" rel="noopener"
+             class="mt-3 flex w-fit items-center gap-2 border border-cocoa text-cocoa text-sm font-semibold px-4 py-2.5 rounded-full hover:bg-cocoa hover:text-cream transition">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            Pesan via WA
+          </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm flex flex-col">
+          <img src="assets/img/muffin-blueberry.webp"
+               alt="Muffin blueberry dengan lini kertas biru"
+               width="800" height="600" loading="lazy"
+               class="rounded-xl aspect-[4/3] object-cover w-full">
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Muffin Blueberry</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">Muffin lembut dengan blueberry, cocok untuk teman minum teh.</p>
+          <div class="mt-auto pt-4">
+          <span class="inline-block bg-butter text-cocoa text-xs font-semibold px-3 py-1 rounded-full">Mulai Rp 35.000</span>
+          <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20Muffin%20Blueberry"
+             target="_blank" rel="noopener"
+             class="mt-3 flex w-fit items-center gap-2 border border-cocoa text-cocoa text-sm font-semibold px-4 py-2.5 rounded-full hover:bg-cocoa hover:text-cream transition">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            Pesan via WA
+          </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm flex flex-col">
+          <img src="assets/img/donat.webp"
+               alt="Donat aneka topping dalam kotak"
+               width="800" height="600" loading="lazy"
+               class="rounded-xl aspect-[4/3] object-cover w-full">
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Donat</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">Donat aneka topping, isi 6 per kotak.</p>
+          <div class="mt-auto pt-4">
+          <span class="inline-block bg-butter text-cocoa text-xs font-semibold px-3 py-1 rounded-full">Mulai Rp 30.000</span>
+          <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20Donat"
+             target="_blank" rel="noopener"
+             class="mt-3 flex w-fit items-center gap-2 border border-cocoa text-cocoa text-sm font-semibold px-4 py-2.5 rounded-full hover:bg-cocoa hover:text-cream transition">
+            <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+            Pesan via WA
+          </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Cara pesan ============ -->
+  <section id="cara-pesan" class="py-16 md:py-24 bg-sand">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-cocoa mb-8 md:mb-10">Cara Pesan</h2>
+
+      <div class="grid gap-6 md:grid-cols-3">
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm">
+          <span class="inline-block bg-butter text-cocoa text-xs font-semibold px-3 py-1 rounded-full">1</span>
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Pilih Kue</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">
+            Lihat menu kami dan tentukan kue yang kamu mau. Rasa dan desain bisa disesuaikan.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm">
+          <span class="inline-block bg-butter text-cocoa text-xs font-semibold px-3 py-1 rounded-full">2</span>
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Chat WhatsApp</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">
+            Klik tombol pesan, pesannya sudah terisi nama kue. Tinggal kirim dan konfirmasi tanggal.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm">
+          <span class="inline-block bg-butter text-cocoa text-xs font-semibold px-3 py-1 rounded-full">3</span>
+          <h3 class="mt-4 font-body text-lg font-semibold text-cocoa">Ambil atau Diantar</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">
+            Pesanan bisa diambil di rumah, atau kami antar ke alamatmu.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Testimoni ============ -->
+  <section id="testimoni" class="py-16 md:py-24 bg-cream">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-cocoa mb-8 md:mb-10">Kata Pelanggan Kami</h2>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+
+        <figure class="bg-white rounded-2xl p-5 shadow-sm">
+          <blockquote class="font-body text-base text-mocha leading-relaxed">
+            &ldquo;Pesan kue ulang tahun buat anak saya, hasilnya persis seperti yang saya minta.
+            Dibuat fresh dan rasanya nggak bikin enek.&rdquo;
+          </blockquote>
+          <figcaption class="mt-4 font-body text-sm text-mocha">
+            <span class="block font-semibold text-cocoa">Rina</span>
+            Ibu rumah tangga
+          </figcaption>
+        </figure>
+
+        <figure class="bg-white rounded-2xl p-5 shadow-sm">
+          <blockquote class="font-body text-base text-mocha leading-relaxed">
+            &ldquo;Pesan snack box 50 buah buat arisan kantor. Semua datang tepat waktu
+            dan kemasannya rapi.&rdquo;
+          </blockquote>
+          <figcaption class="mt-4 font-body text-sm text-mocha">
+            <span class="block font-semibold text-cocoa">Dewi</span>
+            Sekretaris kantor
+          </figcaption>
+        </figure>
+
+        <figure class="bg-white rounded-2xl p-5 shadow-sm">
+          <blockquote class="font-body text-base text-mocha leading-relaxed">
+            &ldquo;Sudah langganan brownies-nya sejak setahun lalu. Bisa titip antar,
+            jadi nggak perlu repot ambil sendiri.&rdquo;
+          </blockquote>
+          <figcaption class="mt-4 font-body text-sm text-mocha">
+            <span class="block font-semibold text-cocoa">Sari</span>
+            Pelanggan tetap
+          </figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Lokasi & jam buka ============ -->
+  <section id="lokasi" class="py-16 md:py-24 bg-sand">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <h2 class="font-display text-3xl md:text-4xl font-semibold text-cocoa mb-8 md:mb-10">Lokasi &amp; Jam Buka</h2>
+
+      <div class="grid gap-6 lg:grid-cols-2">
+
+        <iframe
+          src="https://maps.google.com/maps?q=Jl.%20Merdeka%20No.%20123%2C%20Pontianak&output=embed&z=15"
+          title="Peta lokasi Dapur Manis Bunda"
+          loading="lazy"
+          class="rounded-xl aspect-[4/3] w-full border-0"></iframe>
+
+        <div class="bg-white rounded-2xl p-5 shadow-sm">
+          <h3 class="font-body text-lg font-semibold text-cocoa">Alamat</h3>
+          <p class="mt-2 font-body text-sm text-mocha leading-relaxed">
+            Jl. Merdeka No. 123, Pontianak, Kalimantan Barat 78111
+          </p>
+
+          <h3 class="mt-6 font-body text-lg font-semibold text-cocoa">Jam Buka</h3>
+          <ul class="mt-2 font-body text-sm text-mocha">
+            <li class="flex justify-between gap-4 border-b border-sand py-2">
+              <span>Senin &ndash; Jumat</span>
+              <span class="font-medium text-cocoa">08.00 &ndash; 20.00</span>
+            </li>
+            <li class="flex justify-between gap-4 border-b border-sand py-2">
+              <span>Sabtu</span>
+              <span class="font-medium text-cocoa">08.00 &ndash; 17.00</span>
+            </li>
+            <li class="flex justify-between gap-4 py-2">
+              <span>Minggu</span>
+              <span class="font-medium text-cocoa">Tutup</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA penutup ============ -->
+  <section id="cta" class="py-16 md:py-24 bg-cream">
+    <div class="max-w-6xl mx-auto px-5 md:px-8">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="font-display text-3xl md:text-4xl font-semibold text-cocoa">
+          Siap Pesan Kue untuk Acaramu?
+        </h2>
+        <p class="mt-6 font-body text-base text-mocha leading-relaxed">
+          Konsultasi rasa dan desain gratis. Tinggal chat, kami bantu pilihkan yang paling pas.
+        </p>
+        <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20kue"
+           target="_blank" rel="noopener"
+           class="mt-8 inline-flex items-center gap-2 bg-berry-dark hover:bg-cocoa text-white font-semibold px-6 py-3 rounded-full transition">
+          Pesan Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Footer ============ -->
+  <footer class="bg-cocoa">
+    <div class="max-w-6xl mx-auto px-5 md:px-8 py-12 md:py-16">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+
+        <div>
+          <p class="font-display text-xl font-semibold text-cream">Dapur Manis Bunda</p>
+          <p class="mt-3 font-body text-sm text-sand leading-relaxed">
+            Kue rumahan homemade, dibuat fresh setiap pesanan tanpa pengawet.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-body text-lg font-semibold text-cream">Kontak</h3>
+          <ul class="mt-3 font-body text-sm text-sand">
+            <li>
+              <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20kue"
+                 target="_blank" rel="noopener" class="hover:text-butter transition">
+                WhatsApp 0812-3456-7890
+              </a>
+            </li>
+            <li class="mt-2">Jl. Merdeka No. 123, Pontianak</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="font-body text-lg font-semibold text-cream">Ikuti Kami</h3>
+          <ul class="mt-3 font-body text-sm text-sand">
+            <li>
+              <a href="https://instagram.com/dapurmanisbunda" target="_blank" rel="noopener"
+                 class="hover:text-butter transition">
+                Instagram @dapurmanisbunda
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <p class="mt-10 border-t border-mocha pt-6 font-body text-sm text-sand">
+        &copy; 2026 Dapur Manis Bunda. Semua hak dilindungi.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ============ Tombol WhatsApp melayang ============ -->
+  <a href="https://wa.me/6281234567890?text=Halo%20Dapur%20Manis%20Bunda%2C%20saya%20mau%20pesan%20kue"
+     target="_blank" rel="noopener"
+     aria-label="Pesan via WhatsApp"
+     class="fixed bottom-5 right-5 z-50 inline-flex items-center justify-center w-14 h-14 rounded-full bg-berry-dark hover:bg-cocoa text-white shadow-sm transition">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/>
+    </svg>
+  </a>
+
+  <script>document.querySelectorAll('#nav-mobile a').forEach(a=>a.onclick=()=>document.getElementById('nav-mobile').open=false)</script>
+</body>
+</html>
